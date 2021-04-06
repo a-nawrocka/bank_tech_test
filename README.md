@@ -32,7 +32,7 @@ $ bundle
 ```
 ## Rspec Tests
 ```
-$ cd bank-tech-test
+$ cd bank_tech_test
 $ rspec
 ```
 ## Usage
