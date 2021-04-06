@@ -9,6 +9,9 @@ describe Account do
         expect(account.balance).to eq 0
       end 
     end
+    it "should have an empty transaction log" do 
+      expect(account.transaction_log).to match_array([])
+    end 
   end
 
   describe "#deposit" do
@@ -28,7 +31,7 @@ describe Account do
 
     it "raises an error when insufficient funds" do 
       account.deposit(50.00)  
-                 
+
       expect{account.withdraw(100.00)}.to raise_error("Insufficient balance")
     end     
   end 
