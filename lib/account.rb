@@ -10,14 +10,14 @@ class Account
 
   def deposit(amount)
     @balance += amount
-    transaction = Transaction.new(amount, nil)
+    transaction = Transaction.new(amount, nil, @balance)
     @transaction_log << transaction
   end
 
   def withdraw(amount)
     fail("Insufficient balance") if @balance < amount
     @balance -= amount
-    transaction = Transaction.new(nil, amount)
+    transaction = Transaction.new(nil, amount, @balance)
     @transaction_log << transaction
   end 
 
