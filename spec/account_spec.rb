@@ -18,12 +18,19 @@ describe Account do
     end
   end
 
-  describe "#withdrawal" do 
+  describe "#withdraw" do 
     it "should be able to withdraw money" do 
-      account.withdrawal(50.50)
       account.deposit(1000.00)
+      account.withdraw(50.50)
+      
       expect(account.balance).to eq 949.50
     end
+
+    it "raises an error when insufficient funds" do 
+      account.deposit(50.00)  
+                 
+      expect{account.withdraw(100.00)}.to raise_error("Insufficient balance")
+    end     
   end 
 
 end 

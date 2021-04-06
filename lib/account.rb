@@ -9,7 +9,9 @@ class Account
     @balance += amount
   end
 
-  def withdrawal(amount)
+  def withdraw(amount)
+    fail("Insufficient balance") if @balance < amount
     @balance -= amount
   end 
+
 end 
