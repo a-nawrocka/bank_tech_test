@@ -21,4 +21,17 @@ class Account
     @transaction_log << transaction
   end 
 
+  def display_transaction_log
+    log = "Date      || Credit  || Debit  || Balance \n"
+    @transaction_log.reverse.each do |transaction|
+      log += "#{transaction.date.strftime("%d-%m-%Y")} || "
+      log += "#{transaction.credit ? "%.2f" % transaction.credit : "" } || "
+      log += "#{transaction.debit ? "%.2f" % transaction.debit : ""} || "
+      log += "#{"%.2f" % transaction.balance} \n"
+    end
+
+    log
+  end
+
 end 
+

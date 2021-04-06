@@ -36,4 +36,11 @@ describe Account do
     end     
   end 
 
+  describe "#display_transaction_log"
+    it "prints all transactions" do 
+      account.deposit(10.00)
+      p account
+      expect(account.display_transaction_log).to eq("Date      || Credit  || Debit  || Balance \n#{Time.now.strftime("%d-%m-%Y")} || 10.00 ||  || 10.00 \n")
+    end 
+
 end 
