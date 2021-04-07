@@ -1,11 +1,11 @@
 require_relative "transaction"
 
-class TransactionLog 
+class TransactionLog
 attr_reader :log
 
   def initialize
     @log = []
-  end 
+  end
 
   def add(credit, debit, balance)
     transaction = Transaction.new(credit, debit, balance)
@@ -24,4 +24,4 @@ attr_reader :log
     history
   end
 
-end 
+end

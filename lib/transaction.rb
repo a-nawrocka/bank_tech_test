@@ -7,5 +7,5 @@
     @balance = balance
     @date = Time.now
   end
-  
+
  end

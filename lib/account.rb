@@ -1,12 +1,12 @@
 require_relative "transaction_log"
 
-class Account 
+class Account
   attr_reader :balance, :transaction_log
 
   def initialize
     @balance = 0
     @transaction_log = TransactionLog.new
-  end 
+  end
 
   def deposit(amount)
     @balance += amount
@@ -16,12 +16,12 @@ class Account
   def withdraw(amount)
     fail("Insufficient balance") if @balance < amount
     @balance -= amount
-    @transaction_log.add(nil, amount, @balance)    
-  end 
+    @transaction_log.add(nil, amount, @balance)
+  end
 
   def display_transaction_log
     @transaction_log.display
   end
 
-end 
+end
 
