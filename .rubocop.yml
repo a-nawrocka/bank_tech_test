@@ -1,2 +1,8 @@
 Style/StringLiterals:
   Enabled: false
+
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: never
+
+Documentation:
+    Enabled: false
