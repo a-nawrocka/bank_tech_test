@@ -1,8 +1,7 @@
 # Bank tech test
 
-## Technologies: 
-*  Ruby
-* Rspec
+## Technologies:
+* Ruby
 
 ## Requirements
 
@@ -36,4 +35,10 @@ $ cd bank_tech_test
 $ rspec
 ```
 ## Usage
-irb
+```
+$ irb
+$ require "./lib/account"
+$ account = Account.new
+$ account.deposit(100.00)
+$ account.display_transaction_log
+```
