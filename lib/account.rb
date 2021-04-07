@@ -14,7 +14,8 @@ class Account
   end
 
   def withdraw(amount)
-    fail("Insufficient balance") if @balance < amount
+    raise("Insufficient balance") if @balance < amount
+
     @balance -= amount
     @transaction_log.add(nil, amount, @balance)
   end
@@ -22,6 +23,4 @@ class Account
   def display_transaction_log
     @transaction_log.display
   end
-
 end
-

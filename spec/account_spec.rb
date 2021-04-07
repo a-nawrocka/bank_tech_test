@@ -1,7 +1,6 @@
 require "account"
 
 describe Account do
-
   context "When creating new account" do
     describe "#initialize" do
       it "should have balance of 0" do
@@ -31,14 +30,14 @@ describe Account do
     it "raises an error when insufficient funds" do
       subject.deposit(50.00)
 
-      expect{subject.withdraw(100.00)}.to raise_error("Insufficient balance")
+      expect { subject.withdraw(100.00) }.to raise_error("Insufficient balance")
     end
   end
 
-  describe "#display_transaction_log"
+  describe "#display_transaction_log" do
     it "prints all transactions" do
       subject.deposit(10.00)
-      expect(subject.display_transaction_log).to eq("Date      || Credit  || Debit  || Balance \n#{Time.now.strftime("%d-%m-%Y")} || 10.00 ||  || 10.00 \n")
+      expect(subject.display_transaction_log).to eq("Date      || Credit  || Debit  || Balance \n#{Time.now.strftime('%d-%m-%Y')} || 10.00 ||  || 10.00 \n")
     end
-
+  end
 end
